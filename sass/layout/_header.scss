@@ -1,0 +1,89 @@
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url("../img/hero-main.jpg");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    &:hover {
+      animation-name: twirlAround;
+      animation-duration: 0.3s;
+    }
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    @include responsive(phone) {
+      top: 40%;
+    }
+    @include responsive(small-phone) {
+      top: 50%;
+    }
+  }
+
+  &__nav-box {
+    position: absolute;
+    top: 2.5rem;
+    right: 4rem;
+  }
+
+  &__nav-items {
+    display: inline-block;
+    margin-right: 5rem;
+    font-size: $default-font-size;
+  }
+
+  &__nav-link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      color: $color-white;
+      border: 10px solid transparent;
+    }
+
+    &:hover,
+    &:active {
+      background-color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+      border: 10px solid $color-primary;
+      border-radius: 0.5rem;
+    }
+  }
+}
+
+.navbar-toggler {
+  z-index: 9999;
+  position: absolute;
+  top: 2.5rem;
+  right: 1.5rem;
+  background-color: $color-white;
+  padding: 1rem;
+  border-radius: 50%;
+  &:hover {
+    background-color: lighten($color-primary, 3);
+  }
+}
+
+.navbar-toggler-icon {
+  font-size: 3rem;
+}
